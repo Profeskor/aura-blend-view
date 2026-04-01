@@ -15,7 +15,7 @@ const Index = () => {
           playsInline
           className="h-full w-full object-cover"
           style={{
-            filter: "hue-rotate(200deg) saturate(1.2) brightness(0.55) contrast(1.05)",
+            filter: "hue-rotate(190deg) saturate(1.5) brightness(0.6) contrast(1.1)",
             background: "linear-gradient(135deg, hsl(var(--primary-navy)), hsl(var(--primary-green)))",
           }}
           src="https://videos.pexels.com/video-files/3129671/3129671-uhd_2560_1440_30fps.mp4"
