@@ -89,7 +89,7 @@ const Index = () => {
           transition={{ duration: 1, delay: 0.5 }}
           className="mt-10 text-[0.7rem] text-muted-foreground/50"
         >
-          © 2026 Apparel Group | Powered by AI
+          © 2026 Apparel Group | Powered by SIMS
         </motion.p>
       </div>
     </div>
