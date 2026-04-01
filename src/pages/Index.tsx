@@ -24,13 +24,11 @@ const Index = () => {
           className="absolute bottom-16 left-12 right-12"
         >
           <h2 className="font-heading text-4xl font-bold leading-tight text-primary-foreground">
-            Welcome to
-            <br />
-            AGLens.
+            Welcome to AGLens.
           </h2>
           <p className="mt-4 max-w-md text-sm leading-relaxed text-primary-foreground/70">
-            Apparel Group's unified retail intelligence platform — empowering
-            smarter decisions across every brand, store, and market.
+            Apparel Group's unified retail intelligence platform — driving
+            sharper decisions across every brand, store, and market.
           </p>
         </motion.div>
       </div>
