@@ -48,11 +48,8 @@ const Index = () => {
           {/* Card Header */}
           <div className="mb-8 text-center">
             <h1 className="font-heading text-[2.5rem] font-bold leading-tight tracking-tight bg-gradient-to-r from-foreground to-accent bg-clip-text text-transparent">
-              AGLens
+              One lens. Every insight.
             </h1>
-            <p className="mt-2 text-xs uppercase tracking-[2px] text-muted-foreground">
-              Merchandising Intelligence
-            </p>
           </div>
 
           {/* Microsoft SSO Button */}
@@ -63,16 +60,16 @@ const Index = () => {
               <path d="M11 12H0V23H11V12Z" fill="#00A4EF" />
               <path d="M23 12H12V23H23V12Z" fill="#FFB900" />
             </svg>
-            Initialize Session
+            Sign in with Microsoft
             <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
 
           {/* Footer */}
-          <div className="mt-6 text-center">
-            <a href="#" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
-              Forgot Password?
-            </a>
-          </div>
+          <p className="mt-8 text-center text-xs text-muted-foreground">
+            Access is managed by your organization.
+            <br />
+            Contact IT Admin if you need assistance.
+          </p>
         </motion.div>
 
         {/* Copyright */}
