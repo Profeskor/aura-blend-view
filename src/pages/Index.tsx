@@ -5,51 +5,57 @@ import apparelLogo from "@/assets/apparel_logo.jpg";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen">
-      {/* Left: Video Section */}
-      <div className="relative hidden w-1/2 lg:block">
+    <div className="relative flex h-screen items-center justify-center overflow-hidden bg-background">
+      {/* Full-screen Video Background */}
+      <div className="absolute inset-0 z-0">
         <video
           autoPlay
           muted
           loop
           playsInline
-          className="video-overlay absolute inset-0 h-full w-full"
+          className="h-full w-full object-cover"
+          style={{
+            background: "linear-gradient(135deg, hsl(var(--primary-navy)), hsl(var(--primary-green)))",
+          }}
           src="https://videos.pexels.com/video-files/3129671/3129671-uhd_2560_1440_30fps.mp4"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/20" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle,transparent_20%,rgba(0,0,0,0.8)_100%)]" />
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10 flex flex-col items-center">
+        {/* Logo */}
+        <motion.div
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="mb-8"
+        >
+          <img
+            src={apparelLogo}
+            alt="Apparel Group"
+            className="h-24 w-auto drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]"
+          />
+        </motion.div>
+
+        {/* Glass Card */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="absolute bottom-16 left-12 right-12"
+          transition={{ duration: 0.8 }}
+          className="glass-card w-full max-w-[420px] p-10"
         >
-          <h2 className="font-heading text-4xl font-bold leading-tight text-primary-foreground">
-            Welcome to AGLens.
-          </h2>
-          <p className="mt-4 max-w-md text-sm leading-relaxed text-primary-foreground/70">
-            Apparel Group's unified retail intelligence platform — driving
-            sharper decisions across every brand, store, and market.
-          </p>
-        </motion.div>
-      </div>
-
-      {/* Right: Login Form */}
-      <div className="flex w-full items-center justify-center bg-muted/30 px-6 lg:w-1/2">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="glass-card w-full max-w-md p-10"
-        >
-          <div className="mb-8">
-            <div className="mb-6">
-              <img src={apparelLogo} alt="Apparel Group" className="h-24 w-auto" />
-            </div>
-            <h1 className="font-heading text-3xl font-bold text-foreground">
-              One lens. Every insight.
+          {/* Card Header */}
+          <div className="mb-8 text-center">
+            <h1 className="font-heading text-[2.5rem] font-bold leading-tight tracking-tight bg-gradient-to-r from-foreground to-accent bg-clip-text text-transparent">
+              AGLens
             </h1>
+            <p className="mt-2 text-xs uppercase tracking-[2px] text-muted-foreground">
+              Merchandising Intelligence
+            </p>
           </div>
 
+          {/* Microsoft SSO Button */}
           <Button variant="premium" className="w-full" type="button">
             <svg className="mr-2 h-5 w-5" viewBox="0 0 23 23" fill="none">
               <path d="M11 0H0V11H11V0Z" fill="#F25022" />
@@ -57,16 +63,27 @@ const Index = () => {
               <path d="M11 12H0V23H11V12Z" fill="#00A4EF" />
               <path d="M23 12H12V23H23V12Z" fill="#FFB900" />
             </svg>
-            Sign in with Microsoft
+            Initialize Session
             <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
 
-          <p className="mt-8 text-center text-xs text-muted-foreground">
-            Access is managed by your organization.
-            <br />
-            Contact IT Admin if you need assistance.
-          </p>
+          {/* Footer */}
+          <div className="mt-6 text-center">
+            <a href="#" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
+              Forgot Password?
+            </a>
+          </div>
         </motion.div>
+
+        {/* Copyright */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.5 }}
+          className="mt-10 text-[0.7rem] text-muted-foreground/50"
+        >
+          © 2026 Apparel Group | Powered by AI
+        </motion.p>
       </div>
     </div>
   );

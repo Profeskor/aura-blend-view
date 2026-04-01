@@ -68,21 +68,10 @@
 @layer components {
   .glass-card {
     background: hsl(var(--glass-bg));
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border: 1px solid hsl(var(--glass-border));
-    border-radius: 20px;
-    box-shadow: 0 8px 32px 0 hsl(var(--glass-shadow));
-  }
-
-  .video-overlay {
-    filter: brightness(0.6) contrast(1.1);
-    object-fit: cover;
-  }
-
-  .login-input {
-    @apply h-12 rounded-xl border-border/50 bg-background/60 px-4 text-sm backdrop-blur-sm transition-all duration-200;
-  }
-  .login-input:focus {
-    @apply border-primary/50 bg-background/80 ring-2 ring-primary/20;
+    border-radius: 24px;
+    box-shadow: 0 25px 50px -12px hsl(var(--glass-shadow));
   }
 }
