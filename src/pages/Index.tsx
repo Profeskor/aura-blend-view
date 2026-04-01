@@ -73,13 +73,7 @@ const Index = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="relative z-10 w-full max-w-md rounded-2xl border border-white/[0.08] p-10"
-          style={{
-            background: "linear-gradient(135deg, hsla(222,30%,14%,0.8), hsla(222,30%,10%,0.9))",
-            backdropFilter: "blur(20px)",
-            boxShadow:
-              "0 0 0 1px hsla(185,80%,55%,0.08), 0 0 40px hsla(185,80%,55%,0.04), 0 20px 60px hsla(222,30%,4%,0.5)",
-          }}
+          className="relative z-10 w-full max-w-md rounded-2xl border border-border/50 bg-card p-10 shadow-xl"
         >
           {/* Glowing border accent */}
           <div
