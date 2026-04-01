@@ -79,11 +79,11 @@ const Index = () => {
           <div className="mb-10 text-center">
             <h1
               className="font-heading text-4xl font-bold italic bg-clip-text text-transparent"
-              style={{ backgroundImage: "linear-gradient(135deg, hsl(185, 80%, 55%), hsl(260, 60%, 58%))" }}
+              style={{ backgroundImage: "linear-gradient(135deg, hsl(225, 65%, 52%), hsl(260, 60%, 58%))" }}
             >
               AGLens
             </h1>
-            <p className="mt-1 text-sm tracking-widest text-white/40">
+            <p className="mt-1 text-sm tracking-widest text-muted-foreground">
               Merchandising Intelligence
             </p>
           </div>
