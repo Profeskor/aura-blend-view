@@ -63,7 +63,7 @@ const Index = () => {
             <img
               src={apparelLogo}
               alt="Apparel Group"
-              className="h-28 w-auto drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]"
+              className="h-28 w-auto"
             />
           </motion.div>
 
