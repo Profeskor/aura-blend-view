@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import apparelLogo from "@/assets/apparel_logo.jpg";
+import apparelLogo from "@/assets/apparel_logo.png";
 
 const Index = () => {
   return (
