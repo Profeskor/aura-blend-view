@@ -72,7 +72,7 @@ const Index = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="glass-card w-full p-10"
+            className="w-full rounded-2xl border border-black/10 bg-white/70 p-10 shadow-xl backdrop-blur-md"
           >
             {/* Microsoft SSO Button */}
             <Button variant="premium" className="w-full" type="button">
