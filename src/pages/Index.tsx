@@ -15,12 +15,18 @@ const Index = () => {
           playsInline
           className="h-full w-full object-cover"
           style={{
-            filter: "hue-rotate(160deg) saturate(1.2) brightness(0.7)",
+            filter: "brightness(0.55) contrast(1.05) saturate(0.9)",
             background: "linear-gradient(135deg, hsl(var(--primary-navy)), hsl(var(--primary-green)))",
           }}
           src="https://videos.pexels.com/video-files/3129671/3129671-uhd_2560_1440_30fps.mp4"
         />
-        <div className="absolute inset-0 bg-[radial-gradient(circle,transparent_20%,rgba(0,0,0,0.8)_100%)]" />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(135deg, hsl(var(--primary-navy) / 0.52), hsl(var(--primary-green) / 0.3)), radial-gradient(circle, transparent 22%, hsl(var(--background) / 0.88) 100%)",
+          }}
+        />
       </div>
 
       {/* Content */}
