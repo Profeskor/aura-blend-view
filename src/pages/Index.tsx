@@ -46,13 +46,8 @@ const Index = () => {
               <img src={apparelLogo} alt="Apparel Group" className="h-16 w-auto" />
             </div>
             <h1 className="font-heading text-3xl font-bold text-foreground">
-              AGLens
+              One lens. Every insight.
             </h1>
-            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-              Your single lens into Apparel Group's retail ecosystem — real-time
-              analytics, inventory insights, and performance tracking across all
-              brands and regions.
-            </p>
           </div>
 
           <Button variant="premium" className="w-full" type="button">
