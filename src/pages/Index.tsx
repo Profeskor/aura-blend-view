@@ -7,26 +7,51 @@ const Index = () => {
   return (
     <div className="flex min-h-screen">
       {/* Left: Video Section */}
-      <div className="relative hidden w-1/2 lg:block">
+      <div className="relative hidden w-1/2 overflow-hidden lg:block bg-[hsl(220,30%,5%)]">
         <video
           autoPlay
           muted
           loop
           playsInline
-          className="video-overlay absolute inset-0 h-full w-full"
-          src="https://videos.pexels.com/video-files/3129671/3129671-uhd_2560_1440_30fps.mp4"
+          className="absolute inset-0 h-full w-full object-cover opacity-40"
+          src="https://videos.pexels.com/video-files/6963744/6963744-uhd_2732_1440_25fps.mp4"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/20" />
+        {/* Scanline overlay */}
+        <div
+          className="pointer-events-none absolute inset-0 z-10"
+          style={{
+            backgroundImage:
+              "repeating-linear-gradient(0deg, transparent, transparent 2px, hsla(220,30%,5%,0.15) 2px, hsla(220,30%,5%,0.15) 4px)",
+          }}
+        />
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 z-10 bg-gradient-to-t from-[hsl(220,30%,5%)] via-transparent to-[hsl(225,65%,52%,0.12)]" />
+        {/* Grid pattern */}
+        <div
+          className="pointer-events-none absolute inset-0 z-10 opacity-[0.06]"
+          style={{
+            backgroundImage:
+              "linear-gradient(hsl(225,65%,52%) 1px, transparent 1px), linear-gradient(90deg, hsl(225,65%,52%) 1px, transparent 1px)",
+            backgroundSize: "60px 60px",
+          }}
+        />
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="absolute bottom-16 left-12 right-12"
+          className="absolute bottom-16 left-12 right-12 z-20"
         >
-          <h2 className="font-heading text-4xl font-bold leading-tight text-primary-foreground">
-            Welcome to AGLens.
+          <motion.div
+            initial={{ width: 0 }}
+            animate={{ width: "3rem" }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="mb-4 h-[2px] bg-primary"
+          />
+          <h2 className="font-heading text-4xl font-bold leading-tight tracking-tight text-primary-foreground">
+            Welcome to{" "}
+            <span className="text-primary">AGLens</span>.
           </h2>
-          <p className="mt-4 max-w-md text-sm leading-relaxed text-primary-foreground/70">
+          <p className="mt-4 max-w-md font-mono text-xs uppercase tracking-[0.2em] leading-relaxed text-primary-foreground/50">
             Apparel Group's unified retail intelligence platform — driving
             sharper decisions across every brand, store, and market.
           </p>
