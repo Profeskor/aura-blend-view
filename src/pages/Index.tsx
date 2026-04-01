@@ -65,9 +65,8 @@ const Index = () => {
       <div className="relative flex w-full items-center justify-center px-6 lg:w-1/2">
         {/* Bokeh / glow effects */}
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
-          <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[hsl(185,80%,55%,0.06)] blur-3xl" />
-          <div className="absolute -bottom-32 -left-20 h-80 w-80 rounded-full bg-[hsl(260,60%,58%,0.06)] blur-3xl" />
-          <div className="absolute right-1/3 top-1/4 h-40 w-40 rounded-full bg-white/[0.03] blur-2xl" />
+          <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[hsl(185,80%,55%,0.08)] blur-3xl" />
+          <div className="absolute -bottom-32 -left-20 h-80 w-80 rounded-full bg-[hsl(260,60%,58%,0.08)] blur-3xl" />
         </div>
 
         <motion.div
