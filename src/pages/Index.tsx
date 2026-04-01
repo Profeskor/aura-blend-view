@@ -92,15 +92,12 @@ const Index = () => {
             variant="premium"
             className="w-full h-12 text-sm font-semibold"
             type="button"
-            style={{
-              background: "linear-gradient(90deg, hsl(185, 80%, 45%), hsl(260, 60%, 55%))",
-            }}
           >
             <svg className="mr-2 h-5 w-5" viewBox="0 0 23 23" fill="none">
-              <path d="M11 0H0V11H11V0Z" fill="#fff" fillOpacity="0.9" />
-              <path d="M23 0H12V11H23V0Z" fill="#fff" fillOpacity="0.7" />
-              <path d="M11 12H0V23H11V12Z" fill="#fff" fillOpacity="0.7" />
-              <path d="M23 12H12V23H23V12Z" fill="#fff" fillOpacity="0.5" />
+              <path d="M11 0H0V11H11V0Z" fill="#F25022" />
+              <path d="M23 0H12V11H23V0Z" fill="#7FBA00" />
+              <path d="M11 12H0V23H11V12Z" fill="#00A4EF" />
+              <path d="M23 12H12V23H23V12Z" fill="#FFB900" />
             </svg>
             Sign in with Microsoft
             <ArrowRight className="ml-2 h-4 w-4" />
