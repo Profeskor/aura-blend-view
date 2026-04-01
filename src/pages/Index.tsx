@@ -49,7 +49,7 @@ const Index = () => {
       {/* Right Side - Sign In Content */}
       <div className="relative flex w-full flex-col items-center justify-center lg:w-1/2"
         style={{
-          background: "linear-gradient(180deg, hsl(220 60% 8%) 0%, hsl(220 50% 12%) 100%)",
+          background: "linear-gradient(180deg, hsl(35 30% 95%) 0%, hsl(30 25% 90%) 100%)",
         }}
       >
         <div className="flex w-full max-w-[420px] flex-col items-center px-8">
@@ -63,7 +63,7 @@ const Index = () => {
             <img
               src={apparelLogo}
               alt="Apparel Group"
-              className="h-28 w-auto drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]"
+              className="h-28 w-auto"
             />
           </motion.div>
 
@@ -72,7 +72,7 @@ const Index = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="glass-card w-full p-10"
+            className="w-full rounded-2xl border border-black/10 bg-white/70 p-10 shadow-xl backdrop-blur-md"
           >
             {/* Microsoft SSO Button */}
             <Button variant="premium" className="w-full" type="button">
@@ -81,7 +81,7 @@ const Index = () => {
             </Button>
 
             {/* Footer */}
-            <p className="mt-8 text-center text-xs text-muted-foreground">
+            <p className="mt-8 text-center text-xs text-black/50">
               Access is managed by your organization.
               <br />
               Contact IT Admin if you need assistance.
@@ -93,7 +93,7 @@ const Index = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
-            className="mt-10 text-[0.7rem] text-muted-foreground/50"
+            className="mt-10 text-[0.7rem] text-black/40"
           >
             © 2026 Apparel Group | Powered by <img src={simsLogo} alt="SIMS" className="inline-block h-7 w-auto ml-1 align-middle" />
           </motion.p>
