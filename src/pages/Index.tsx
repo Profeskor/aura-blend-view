@@ -103,7 +103,7 @@ const Index = () => {
             <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
 
-          <p className="mt-8 text-center text-[11px] text-white/30">
+          <p className="mt-8 text-center text-[11px] text-muted-foreground">
             Access is managed by your organization.
             <br />
             Contact IT Admin if you need assistance.
