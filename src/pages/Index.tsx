@@ -81,7 +81,7 @@ const Index = () => {
             </Button>
 
             {/* Footer */}
-            <p className="mt-8 text-center text-xs text-muted-foreground">
+            <p className="mt-8 text-center text-xs text-black/50">
               Access is managed by your organization.
               <br />
               Contact IT Admin if you need assistance.
