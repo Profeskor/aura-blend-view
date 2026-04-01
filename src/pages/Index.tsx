@@ -6,9 +6,9 @@ import simsLogo from "@/assets/sims_logo.png";
 
 const Index = () => {
   return (
-    <div className="relative flex h-screen items-center justify-center overflow-hidden bg-background">
-      {/* Full-screen Video Background */}
-      <div className="absolute inset-0 z-0">
+    <div className="flex h-screen overflow-hidden bg-background">
+      {/* Left Side - Video/Image */}
+      <div className="relative hidden w-1/2 lg:block">
         <video
           autoPlay
           muted
@@ -28,64 +28,86 @@ const Index = () => {
               "linear-gradient(135deg, rgba(16,32,128,0.55), rgba(16,32,128,0.35)), radial-gradient(circle, transparent 22%, rgba(0,0,0,0.88) 100%)",
           }}
         />
-      </div>
-
-      {/* Content */}
-      <div className="relative z-10 flex flex-col items-center">
-        {/* Logo */}
-        <motion.div
-          initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="mb-8"
-        >
-          <img
-            src={apparelLogo}
-            alt="Apparel Group"
-            className="h-32 w-auto drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]"
-          />
-        </motion.div>
-
-        {/* Glass Card */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="glass-card w-full max-w-[420px] p-10"
-        >
-          {/* Card Header */}
-          <div className="mb-8 text-center">
-            <h1 className="font-heading text-[2.8rem] font-bold leading-tight tracking-tight text-foreground">
+        {/* Optional branding overlay on left */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1 }}
+            className="text-center"
+          >
+            <h2 className="font-heading text-5xl font-bold text-white drop-shadow-lg">
               OmniLens
-            </h1>
-            <p className="mt-2 font-heading text-lg font-medium bg-gradient-to-r from-foreground/80 to-accent bg-clip-text text-transparent">
+            </h2>
+            <p className="mt-3 text-lg text-white/70 font-medium">
               One lens. Every insight.
             </p>
-          </div>
+          </motion.div>
+        </div>
+      </div>
 
-          {/* Microsoft SSO Button */}
-          <Button variant="premium" className="w-full" type="button">
-            Sign in with Microsoft
-            <ArrowRight className="ml-2 h-4 w-4" />
-          </Button>
+      {/* Right Side - Sign In Content */}
+      <div className="relative flex w-full flex-col items-center justify-center lg:w-1/2"
+        style={{
+          background: "linear-gradient(180deg, hsl(220 60% 8%) 0%, hsl(220 50% 12%) 100%)",
+        }}
+      >
+        <div className="flex w-full max-w-[420px] flex-col items-center px-8">
+          {/* Logo */}
+          <motion.div
+            initial={{ opacity: 0, y: -30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="mb-10"
+          >
+            <img
+              src={apparelLogo}
+              alt="Apparel Group"
+              className="h-28 w-auto drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]"
+            />
+          </motion.div>
 
-          {/* Footer */}
-          <p className="mt-8 text-center text-xs text-muted-foreground">
-            Access is managed by your organization.
-            <br />
-            Contact IT Admin if you need assistance.
-          </p>
-        </motion.div>
+          {/* Glass Card */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="glass-card w-full p-10"
+          >
+            {/* Card Header */}
+            <div className="mb-8 text-center">
+              <h1 className="font-heading text-[2.8rem] font-bold leading-tight tracking-tight text-foreground">
+                OmniLens
+              </h1>
+              <p className="mt-2 font-heading text-lg font-medium bg-gradient-to-r from-foreground/80 to-accent bg-clip-text text-transparent">
+                One lens. Every insight.
+              </p>
+            </div>
 
-        {/* Copyright */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.5 }}
-          className="mt-10 text-[0.7rem] text-muted-foreground/50"
-        >
-          © 2026 Apparel Group | Powered by <img src={simsLogo} alt="SIMS" className="inline-block h-7 w-auto ml-1 align-middle" />
-        </motion.p>
+            {/* Microsoft SSO Button */}
+            <Button variant="premium" className="w-full" type="button">
+              Sign in with Microsoft
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+
+            {/* Footer */}
+            <p className="mt-8 text-center text-xs text-muted-foreground">
+              Access is managed by your organization.
+              <br />
+              Contact IT Admin if you need assistance.
+            </p>
+          </motion.div>
+
+          {/* Copyright */}
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.5 }}
+            className="mt-10 text-[0.7rem] text-muted-foreground/50"
+          >
+            © 2026 Apparel Group | Powered by <img src={simsLogo} alt="SIMS" className="inline-block h-7 w-auto ml-1 align-middle" />
+          </motion.p>
+        </div>
       </div>
     </div>
   );
