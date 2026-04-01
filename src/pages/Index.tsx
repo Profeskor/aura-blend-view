@@ -6,7 +6,7 @@ import cyborgHero from "@/assets/cyborg_hero.jpg";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen bg-[hsl(222,30%,8%)]">
+    <div className="flex min-h-screen bg-background">
       {/* Left: Cyborg Hero */}
       <div className="relative hidden w-1/2 overflow-hidden lg:block">
         <img
@@ -65,46 +65,25 @@ const Index = () => {
       <div className="relative flex w-full items-center justify-center px-6 lg:w-1/2">
         {/* Bokeh / glow effects */}
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
-          <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[hsl(185,80%,55%,0.06)] blur-3xl" />
-          <div className="absolute -bottom-32 -left-20 h-80 w-80 rounded-full bg-[hsl(260,60%,58%,0.06)] blur-3xl" />
-          <div className="absolute right-1/3 top-1/4 h-40 w-40 rounded-full bg-white/[0.03] blur-2xl" />
+          <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[hsl(185,80%,55%,0.08)] blur-3xl" />
+          <div className="absolute -bottom-32 -left-20 h-80 w-80 rounded-full bg-[hsl(260,60%,58%,0.08)] blur-3xl" />
         </div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="relative z-10 w-full max-w-md rounded-2xl border border-white/[0.08] p-10"
-          style={{
-            background: "linear-gradient(135deg, hsla(222,30%,14%,0.8), hsla(222,30%,10%,0.9))",
-            backdropFilter: "blur(20px)",
-            boxShadow:
-              "0 0 0 1px hsla(185,80%,55%,0.08), 0 0 40px hsla(185,80%,55%,0.04), 0 20px 60px hsla(222,30%,4%,0.5)",
-          }}
+          className="relative z-10 w-full max-w-md rounded-2xl border border-border/50 bg-card p-10 shadow-xl"
         >
-          {/* Glowing border accent */}
-          <div
-            className="pointer-events-none absolute -inset-[1px] rounded-2xl opacity-30"
-            style={{
-              background:
-                "linear-gradient(135deg, hsl(185,80%,55%), transparent 40%, transparent 60%, hsl(260,60%,58%))",
-              mask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
-              WebkitMask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
-              maskComposite: "xor",
-              WebkitMaskComposite: "xor",
-              padding: "1px",
-              borderRadius: "1rem",
-            }}
-          />
 
           <div className="mb-10 text-center">
             <h1
               className="font-heading text-4xl font-bold italic bg-clip-text text-transparent"
-              style={{ backgroundImage: "linear-gradient(135deg, hsl(185, 80%, 55%), hsl(260, 60%, 58%))" }}
+              style={{ backgroundImage: "linear-gradient(135deg, hsl(225, 65%, 52%), hsl(260, 60%, 58%))" }}
             >
               AGLens
             </h1>
-            <p className="mt-1 text-sm tracking-widest text-white/40">
+            <p className="mt-1 text-sm tracking-widest text-muted-foreground">
               Merchandising Intelligence
             </p>
           </div>
@@ -113,21 +92,18 @@ const Index = () => {
             variant="premium"
             className="w-full h-12 text-sm font-semibold"
             type="button"
-            style={{
-              background: "linear-gradient(90deg, hsl(185, 80%, 45%), hsl(260, 60%, 55%))",
-            }}
           >
             <svg className="mr-2 h-5 w-5" viewBox="0 0 23 23" fill="none">
-              <path d="M11 0H0V11H11V0Z" fill="#fff" fillOpacity="0.9" />
-              <path d="M23 0H12V11H23V0Z" fill="#fff" fillOpacity="0.7" />
-              <path d="M11 12H0V23H11V12Z" fill="#fff" fillOpacity="0.7" />
-              <path d="M23 12H12V23H23V12Z" fill="#fff" fillOpacity="0.5" />
+              <path d="M11 0H0V11H11V0Z" fill="#F25022" />
+              <path d="M23 0H12V11H23V0Z" fill="#7FBA00" />
+              <path d="M11 12H0V23H11V12Z" fill="#00A4EF" />
+              <path d="M23 12H12V23H23V12Z" fill="#FFB900" />
             </svg>
             Sign in with Microsoft
             <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
 
-          <p className="mt-8 text-center text-[11px] text-white/30">
+          <p className="mt-8 text-center text-[11px] text-muted-foreground">
             Access is managed by your organization.
             <br />
             Contact IT Admin if you need assistance.
