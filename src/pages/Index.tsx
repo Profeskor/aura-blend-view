@@ -54,9 +54,12 @@ const Index = () => {
         >
           {/* Card Header */}
           <div className="mb-8 text-center">
-            <h1 className="font-heading text-[2.5rem] font-bold leading-tight tracking-tight bg-gradient-to-r from-foreground to-accent bg-clip-text text-transparent">
-              One lens. Every insight.
+            <h1 className="font-heading text-[2.8rem] font-bold leading-tight tracking-tight text-foreground">
+              AGLens
             </h1>
+            <p className="mt-2 font-heading text-lg font-medium bg-gradient-to-r from-foreground/80 to-accent bg-clip-text text-transparent">
+              One lens. Every insight.
+            </p>
           </div>
 
           {/* Microsoft SSO Button */}
