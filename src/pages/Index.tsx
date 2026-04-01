@@ -75,20 +75,6 @@ const Index = () => {
           transition={{ duration: 0.6 }}
           className="relative z-10 w-full max-w-md rounded-2xl border border-border/50 bg-card p-10 shadow-xl"
         >
-          {/* Glowing border accent */}
-          <div
-            className="pointer-events-none absolute -inset-[1px] rounded-2xl opacity-30"
-            style={{
-              background:
-                "linear-gradient(135deg, hsl(185,80%,55%), transparent 40%, transparent 60%, hsl(260,60%,58%))",
-              mask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
-              WebkitMask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
-              maskComposite: "xor",
-              WebkitMaskComposite: "xor",
-              padding: "1px",
-              borderRadius: "1rem",
-            }}
-          />
 
           <div className="mb-10 text-center">
             <h1
