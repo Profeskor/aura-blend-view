@@ -93,7 +93,7 @@ const Index = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
-            className="mt-10 text-[0.7rem] text-muted-foreground/50"
+            className="mt-10 text-[0.7rem] text-black/40"
           >
             © 2026 Apparel Group | Powered by <img src={simsLogo} alt="SIMS" className="inline-block h-7 w-auto ml-1 align-middle" />
           </motion.p>
