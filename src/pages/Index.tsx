@@ -7,75 +7,64 @@ import cyborgHero from "@/assets/cyborg_hero.jpg";
 const Index = () => {
   return (
     <div className="flex min-h-screen bg-background">
-      {/* Left: Cyborg Hero */}
-      <div className="relative hidden w-1/2 overflow-hidden lg:block">
-        <img
-          src={cyborgHero}
-          alt="AGLens Intelligence"
-          className="absolute inset-0 h-full w-full object-cover"
-          width={1024}
-          height={1440}
-        />
-        {/* Dark vignette */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[hsl(222,30%,4%)] via-transparent to-[hsl(222,30%,4%,0.4)]" />
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[hsl(222,30%,4%,0.6)]" />
+      {/* Left: Animated Hero */}
+      <div className="relative hidden w-1/2 items-center justify-center overflow-hidden lg:flex bg-background">
+        {/* Subtle gradient wash */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.03] via-transparent to-accent/[0.03]" />
 
-        {/* Apparel Group logo top-left */}
+        {/* Animated floating image */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          className="absolute left-10 top-10 z-20"
+          initial={{ opacity: 0, scale: 0.92 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
+          className="relative z-10 flex flex-col items-center px-12"
         >
-          <img src={apparelLogo} alt="Apparel Group" className="h-14 w-auto brightness-200 invert" />
-        </motion.div>
-
-        {/* Bottom text */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="absolute bottom-12 left-10 right-10 z-20"
-        >
-          <motion.div
-            initial={{ width: 0 }}
-            animate={{ width: "3rem" }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="mb-4 h-[2px]"
-            style={{ background: "linear-gradient(90deg, hsl(185, 80%, 55%), hsl(260, 60%, 58%))" }}
+          <motion.img
+            src={cyborgHero}
+            alt="AGLens Intelligence"
+            className="h-[420px] w-auto rounded-3xl object-cover shadow-2xl"
+            animate={{ y: [0, -10, 0] }}
+            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+            width={1024}
+            height={1440}
           />
-          <h2 className="font-heading text-3xl font-bold leading-tight tracking-tight text-white/90">
-            Welcome to{" "}
-            <span
-              className="bg-clip-text text-transparent"
-              style={{ backgroundImage: "linear-gradient(135deg, hsl(185, 80%, 55%), hsl(260, 60%, 58%))" }}
-            >
-              AGLens
-            </span>
-            .
-          </h2>
-          <p className="mt-3 max-w-sm font-mono text-[10px] uppercase tracking-[0.2em] leading-relaxed text-white/40">
-            Apparel Group's unified retail intelligence platform — driving
-            sharper decisions across every brand, store, and market.
-          </p>
+
+          {/* Bottom text */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="mt-10 text-center"
+          >
+            <img src={apparelLogo} alt="Apparel Group" className="mx-auto mb-5 h-12 w-auto" />
+            <h2 className="font-heading text-2xl font-semibold tracking-tight text-foreground">
+              Welcome to{" "}
+              <span
+                className="bg-clip-text text-transparent"
+                style={{ backgroundImage: "linear-gradient(135deg, hsl(225, 65%, 52%), hsl(260, 60%, 58%))" }}
+              >
+                AGLens
+              </span>
+            </h2>
+            <p className="mt-2 max-w-xs text-xs leading-relaxed text-muted-foreground">
+              Apparel Group's unified retail intelligence platform — driving
+              sharper decisions across every brand, store, and market.
+            </p>
+          </motion.div>
         </motion.div>
       </div>
 
+      {/* Divider */}
+      <div className="hidden w-px bg-border lg:block" />
+
       {/* Right: Login */}
       <div className="relative flex w-full items-center justify-center px-6 lg:w-1/2">
-        {/* Bokeh / glow effects */}
-        <div className="pointer-events-none absolute inset-0 overflow-hidden">
-          <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[hsl(185,80%,55%,0.08)] blur-3xl" />
-          <div className="absolute -bottom-32 -left-20 h-80 w-80 rounded-full bg-[hsl(260,60%,58%,0.08)] blur-3xl" />
-        </div>
-
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="relative z-10 w-full max-w-md rounded-2xl border border-border/50 bg-card p-10 shadow-xl"
+          className="w-full max-w-sm"
         >
-
           <div className="mb-10 text-center">
             <h1
               className="font-heading text-4xl font-bold italic bg-clip-text text-transparent"
