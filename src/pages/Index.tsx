@@ -6,7 +6,7 @@ import cyborgHero from "@/assets/cyborg_hero.jpg";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen bg-[hsl(222,30%,8%)]">
+    <div className="flex min-h-screen bg-background">
       {/* Left: Cyborg Hero */}
       <div className="relative hidden w-1/2 overflow-hidden lg:block">
         <img
