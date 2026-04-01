@@ -24,7 +24,7 @@ const Index = () => {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(135deg, hsl(var(--primary-navy) / 0.52), hsl(var(--primary-green) / 0.3)), radial-gradient(circle, transparent 22%, hsl(var(--background) / 0.88) 100%)",
+              "linear-gradient(135deg, rgba(16,32,128,0.55), rgba(16,32,128,0.35)), radial-gradient(circle, transparent 22%, rgba(0,0,0,0.88) 100%)",
           }}
         />
       </div>
