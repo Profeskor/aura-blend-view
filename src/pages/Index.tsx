@@ -65,12 +65,6 @@ const Index = () => {
 
           {/* Microsoft SSO Button */}
           <Button variant="premium" className="w-full" type="button">
-            <svg className="mr-2 h-5 w-5" viewBox="0 0 23 23" fill="none">
-              <path d="M11 0H0V11H11V0Z" fill="#F25022" />
-              <path d="M23 0H12V11H23V0Z" fill="#7FBA00" />
-              <path d="M11 12H0V23H11V12Z" fill="#00A4EF" />
-              <path d="M23 12H12V23H23V12Z" fill="#FFB900" />
-            </svg>
             Sign in with Microsoft
             <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
