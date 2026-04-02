@@ -39,10 +39,7 @@ const Index = () => {
       </div>
 
       {/* Right Side - Sign In Content */}
-      <div className="relative flex w-full flex-col items-center justify-center lg:w-1/2"
-        style={{
-          background: "linear-gradient(180deg, hsl(35 30% 95%) 0%, hsl(30 25% 90%) 100%)",
-        }}
+      <div className="relative flex w-full flex-col items-center justify-center lg:w-1/2 bg-[hsl(0_0%_96%)]"
       >
         <div className="flex w-full max-w-[420px] flex-col items-center px-8">
           {/* Logo */}
