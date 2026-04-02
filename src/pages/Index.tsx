@@ -9,7 +9,7 @@ const Index = () => {
   return (
     <div className="flex h-screen overflow-hidden bg-background">
       {/* Left Side - Video/Image */}
-      <div className="relative hidden w-1/2 lg:block">
+      <div className="relative hidden w-1/2 lg:block overflow-hidden">
         <motion.img
           src={heroCreative}
           alt="OmniLens Dashboard"
@@ -18,6 +18,46 @@ const Index = () => {
           animate={{ scale: 1 }}
           transition={{ duration: 8, ease: "easeOut" }}
         />
+
+        {/* Animated light sweep */}
+        <motion.div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: "linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.12) 45%, rgba(255,255,255,0.05) 50%, transparent 55%)",
+          }}
+          initial={{ x: "-100%" }}
+          animate={{ x: "200%" }}
+          transition={{ duration: 4, ease: "easeInOut", repeat: Infinity, repeatDelay: 6 }}
+        />
+
+        {/* Floating bokeh particles */}
+        {[...Array(5)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute rounded-full pointer-events-none"
+            style={{
+              width: [6, 10, 4, 8, 5][i],
+              height: [6, 10, 4, 8, 5][i],
+              background: `rgba(255,255,255,${[0.15, 0.1, 0.2, 0.08, 0.12][i]})`,
+              left: `${[15, 40, 70, 25, 60][i]}%`,
+              top: `${[20, 50, 30, 70, 80][i]}%`,
+              filter: "blur(1px)",
+            }}
+            animate={{
+              y: [0, -30, 0],
+              x: [0, [10, -15, 8, -10, 12][i], 0],
+              opacity: [0.3, 0.8, 0.3],
+            }}
+            transition={{
+              duration: [5, 7, 4, 6, 8][i],
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: i * 1.2,
+            }}
+          />
+        ))}
+
+        {/* Vignette overlay */}
         <div
           className="absolute inset-0"
           style={{
