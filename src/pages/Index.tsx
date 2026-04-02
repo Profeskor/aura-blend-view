@@ -10,37 +10,28 @@ const Index = () => {
     <div className="flex h-screen overflow-hidden bg-background">
       {/* Left Side - Video/Image */}
       <div className="relative hidden w-1/2 lg:block">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
+        <img
+          src={heroCreative}
+          alt="OmniLens Dashboard"
           className="h-full w-full object-cover"
-          style={{
-            filter: "hue-rotate(190deg) saturate(1.5) brightness(0.6) contrast(1.1)",
-            background: "linear-gradient(135deg, hsl(var(--primary-navy)), hsl(var(--primary-green)))",
-          }}
-          src="https://videos.pexels.com/video-files/3129671/3129671-uhd_2560_1440_30fps.mp4"
         />
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(135deg, rgba(16,32,128,0.55), rgba(16,32,128,0.35)), radial-gradient(circle, transparent 22%, rgba(0,0,0,0.88) 100%)",
+              "radial-gradient(circle, transparent 30%, rgba(0,0,0,0.7) 100%)",
           }}
         />
-        {/* Optional branding overlay on left */}
-        <div className="absolute inset-0 flex items-center justify-center">
+        <div className="absolute inset-0 flex items-end justify-start p-10">
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="text-center"
           >
-            <h2 className="font-heading text-5xl font-bold text-white drop-shadow-lg">
+            <h2 className="font-heading text-4xl font-bold text-white drop-shadow-lg">
               OmniLens
             </h2>
-            <p className="mt-3 text-lg text-white/70 font-medium">
+            <p className="mt-2 text-sm text-white/60 font-medium">
               One lens. Every insight.
             </p>
           </motion.div>
