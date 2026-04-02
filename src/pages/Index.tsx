@@ -10,10 +10,13 @@ const Index = () => {
     <div className="flex h-screen overflow-hidden bg-background">
       {/* Left Side - Video/Image */}
       <div className="relative hidden w-1/2 lg:block">
-        <img
+        <motion.img
           src={heroCreative}
           alt="OmniLens Dashboard"
           className="h-full w-full object-cover"
+          initial={{ scale: 1.15 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 8, ease: "easeOut" }}
         />
         <div
           className="absolute inset-0"
