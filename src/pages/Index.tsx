@@ -109,7 +109,7 @@ const Index = () => {
             className="w-full rounded-2xl border border-black/8 bg-white p-10 shadow-lg"
           >
             {/* Microsoft SSO Button */}
-            <Button variant="premium" className="w-full" type="button">
+            <Button variant="premium" className="w-full" type="button" onClick={() => navigate("/dashboard")}>
               Sign in with Microsoft
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
