@@ -1,11 +1,13 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import apparelLogo from "@/assets/apparel_logo.png";
 import heroCreative from "@/assets/hero_creative.png";
 import simsLogo from "@/assets/sims_logo.png";
 
 const Index = () => {
+  const navigate = useNavigate();
   return (
     <div className="flex h-screen overflow-hidden bg-background">
       {/* Left Side - Video/Image */}
@@ -107,7 +109,7 @@ const Index = () => {
             className="w-full rounded-2xl border border-black/8 bg-white p-10 shadow-lg"
           >
             {/* Microsoft SSO Button */}
-            <Button variant="premium" className="w-full" type="button">
+            <Button variant="premium" className="w-full" type="button" onClick={() => navigate("/dashboard")}>
               Sign in with Microsoft
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
