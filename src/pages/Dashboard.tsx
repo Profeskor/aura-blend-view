@@ -100,7 +100,7 @@ const Dashboard = () => {
                 className={`group relative flex flex-col items-center rounded-2xl border p-8 transition-all duration-300 ${
                   isActive
                     ? "cursor-pointer bg-card border-border hover:border-foreground/20 hover:shadow-[0_20px_50px_-15px_hsl(var(--foreground)/0.15)]"
-                    : "cursor-default bg-muted/40 border-dashed border-border/40"
+                    : "cursor-default bg-muted/40 border-border/30"
                 }`}
               >
                 {/* Coming soon badge */}
