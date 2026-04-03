@@ -97,54 +97,45 @@ const Dashboard = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.15 + i * 0.1 }}
                 whileHover={isActive ? { y: -6, scale: 1.02 } : {}}
-                className={`group relative flex flex-col items-center rounded-2xl border p-8 transition-all duration-300 ${
+                className={`group relative flex flex-col items-start rounded-2xl border p-7 transition-all duration-300 min-h-[280px] ${
                   isActive
-                    ? "cursor-pointer bg-foreground text-background border-foreground hover:shadow-[0_20px_50px_-15px_hsl(var(--foreground)/0.35)]"
-                    : "cursor-default bg-muted/30 border-border/20 opacity-60"
+                    ? "cursor-pointer bg-card border-border hover:shadow-[0_20px_50px_-15px_hsl(var(--foreground)/0.12)]"
+                    : "cursor-default bg-muted/20 border-dashed border-border/30"
                 }`}
               >
                 {/* Coming soon badge */}
                 {mod.comingSoon && (
-                  <div className="absolute right-3 top-3 flex items-center gap-1 rounded-full bg-secondary px-2.5 py-1">
-                    <Lock className="h-3 w-3 text-muted-foreground" />
-                    <span className="text-[0.6rem] font-medium uppercase tracking-wider text-muted-foreground">
+                  <div className="absolute right-4 top-4 rounded-md border border-border/40 bg-card px-2.5 py-1">
+                    <span className="text-[0.6rem] font-semibold uppercase tracking-[0.15em] text-muted-foreground">
                       Soon
                     </span>
                   </div>
                 )}
 
-                {/* Icon container */}
-                <motion.div
-                  className={`mb-5 flex h-16 w-16 items-center justify-center rounded-2xl transition-colors duration-300 ${
-                    isActive
-                      ? "bg-background text-foreground"
-                      : "bg-muted text-muted-foreground"
-                  }`}
-                >
-                  <Icon className="h-7 w-7" strokeWidth={1.5} />
-                </motion.div>
+                {/* Icon */}
+                <Icon className={`h-8 w-8 mb-auto ${isActive ? "text-foreground" : "text-muted-foreground/40"}`} strokeWidth={1.5} />
 
                 {/* Title */}
-                <h3 className={`text-sm font-heading font-semibold ${isActive ? "text-background" : "text-muted-foreground/70"}`}>
+                <h3 className={`text-lg font-heading font-semibold mt-6 ${isActive ? "text-foreground" : "text-muted-foreground/50"}`}>
                   {mod.title}
                 </h3>
 
                 {/* Description */}
-                <p className={`mt-2 text-center text-xs leading-relaxed ${isActive ? "text-background/70" : "text-muted-foreground"}`}>
+                <p className={`mt-2 text-sm leading-relaxed ${isActive ? "text-muted-foreground" : "text-muted-foreground/40"}`}>
                   {mod.description}
                 </p>
 
-                {/* Arrow for active modules */}
+                {/* Launch button for active modules */}
                 {isActive && (
-                  <motion.div
-                    className="mt-5 flex items-center gap-1 text-xs font-medium text-background/70 group-hover:text-background transition-colors"
+                  <motion.button
+                    className="mt-6 flex items-center gap-2 rounded-lg bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-all hover:opacity-90"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.5 }}
                   >
                     Launch
-                    <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
-                  </motion.div>
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </motion.button>
                 )}
               </motion.div>
             );
