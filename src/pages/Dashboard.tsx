@@ -99,13 +99,13 @@ const Dashboard = () => {
                 whileHover={isActive ? { y: -6, scale: 1.02 } : {}}
                 className={`group relative flex flex-col items-center rounded-2xl border p-8 transition-all duration-300 ${
                   isActive
-                    ? "cursor-pointer bg-card border-border hover:border-foreground/20 hover:shadow-[0_20px_50px_-15px_hsl(var(--foreground)/0.15)]"
-                    : "cursor-default bg-muted/40 border-border/30"
+                    ? "cursor-pointer bg-foreground text-background border-foreground hover:shadow-[0_20px_50px_-15px_hsl(var(--foreground)/0.35)]"
+                    : "cursor-default bg-muted/30 border-border/20 opacity-60"
                 }`}
               >
                 {/* Coming soon badge */}
                 {mod.comingSoon && (
-                  <div className="absolute right-3 top-3 flex items-center gap-1 rounded-full bg-muted px-2.5 py-1">
+                  <div className="absolute right-3 top-3 flex items-center gap-1 rounded-full bg-secondary px-2.5 py-1">
                     <Lock className="h-3 w-3 text-muted-foreground" />
                     <span className="text-[0.6rem] font-medium uppercase tracking-wider text-muted-foreground">
                       Soon
@@ -117,7 +117,7 @@ const Dashboard = () => {
                 <motion.div
                   className={`mb-5 flex h-16 w-16 items-center justify-center rounded-2xl transition-colors duration-300 ${
                     isActive
-                      ? "bg-foreground text-background group-hover:bg-foreground"
+                      ? "bg-background text-foreground"
                       : "bg-muted text-muted-foreground"
                   }`}
                 >
@@ -125,19 +125,19 @@ const Dashboard = () => {
                 </motion.div>
 
                 {/* Title */}
-                <h3 className={`text-sm font-heading font-semibold ${isActive ? "text-foreground" : "text-muted-foreground/70"}`}>
+                <h3 className={`text-sm font-heading font-semibold ${isActive ? "text-background" : "text-muted-foreground/70"}`}>
                   {mod.title}
                 </h3>
 
                 {/* Description */}
-                <p className="mt-2 text-center text-xs leading-relaxed text-muted-foreground">
+                <p className={`mt-2 text-center text-xs leading-relaxed ${isActive ? "text-background/70" : "text-muted-foreground"}`}>
                   {mod.description}
                 </p>
 
                 {/* Arrow for active modules */}
                 {isActive && (
                   <motion.div
-                    className="mt-5 flex items-center gap-1 text-xs font-medium text-muted-foreground group-hover:text-foreground transition-colors"
+                    className="mt-5 flex items-center gap-1 text-xs font-medium text-background/70 group-hover:text-background transition-colors"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.5 }}
