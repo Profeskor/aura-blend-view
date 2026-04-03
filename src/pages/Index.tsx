@@ -7,6 +7,7 @@ import heroCreative from "@/assets/hero_creative.png";
 import simsLogo from "@/assets/sims_logo.png";
 
 const Index = () => {
+  const navigate = useNavigate();
   return (
     <div className="flex h-screen overflow-hidden bg-background">
       {/* Left Side - Video/Image */}
