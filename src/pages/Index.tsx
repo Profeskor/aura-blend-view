@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import apparelLogo from "@/assets/apparel_logo.png";
 import heroCreative from "@/assets/hero_creative.png";
