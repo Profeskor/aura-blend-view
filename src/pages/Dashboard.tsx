@@ -125,7 +125,7 @@ const Dashboard = () => {
                 </motion.div>
 
                 {/* Title */}
-                <h3 className="text-sm font-heading font-semibold text-foreground">
+                <h3 className={`text-sm font-heading font-semibold ${isActive ? "text-foreground" : "text-muted-foreground/70"}`}>
                   {mod.title}
                 </h3>
 
