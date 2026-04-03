@@ -97,10 +97,10 @@ const Dashboard = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.15 + i * 0.1 }}
                 whileHover={isActive ? { y: -6, scale: 1.02 } : {}}
-                className={`group relative flex flex-col items-center rounded-2xl border bg-card p-8 transition-all duration-300 ${
+                className={`group relative flex flex-col items-center rounded-2xl border p-8 transition-all duration-300 ${
                   isActive
-                    ? "cursor-pointer border-border hover:border-foreground/20 hover:shadow-[0_20px_50px_-15px_hsl(var(--foreground)/0.15)]"
-                    : "cursor-default border-border/50 opacity-50"
+                    ? "cursor-pointer bg-card border-border hover:border-foreground/20 hover:shadow-[0_20px_50px_-15px_hsl(var(--foreground)/0.15)]"
+                    : "cursor-default bg-muted/40 border-dashed border-border/40"
                 }`}
               >
                 {/* Coming soon badge */}
