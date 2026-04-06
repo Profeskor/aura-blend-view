@@ -269,7 +269,7 @@ const InsightsChatbot = ({ dashboardContext }: InsightsChatbotProps) => {
               {/* Input area — Claude style bottom bar */}
               <div className="border-t border-border/50">
                 <div className="px-4 py-3">
-                  <div className="relative rounded-2xl border border-border bg-card shadow-sm focus-within:border-foreground/20 focus-within:shadow-md transition-all">
+                  <div className="relative rounded-xl border border-border bg-background shadow-sm focus-within:border-foreground/20 transition-all">
                     <textarea
                       ref={textareaRef}
                       value={input}
