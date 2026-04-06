@@ -1,9 +1,13 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useImperativeHandle, forwardRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Send, Sparkles, Loader2, ArrowUp, RotateCcw } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 
 type Message = { role: "user" | "assistant"; content: string };
+
+export interface InsightsChatbotHandle {
+  openWithPrompt: (prompt: string) => void;
+}
 
 interface InsightsChatbotProps {
   dashboardContext: string;
