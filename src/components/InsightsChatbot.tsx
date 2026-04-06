@@ -168,7 +168,7 @@ const InsightsChatbot = ({ dashboardContext }: InsightsChatbotProps) => {
               style={{ height: "min(640px, calc(100vh - 48px))" }}
             >
               {/* Top bar */}
-              <div className="flex items-center justify-between px-6 py-3 border-b border-border/50 bg-background/90 backdrop-blur-md">
+              <div className="flex items-center justify-between px-4 py-3 border-b border-border/50">
                 <div className="flex items-center gap-3">
                   <div className="flex h-8 w-8 items-center justify-center rounded-full bg-foreground">
                     <Sparkles className="h-3.5 w-3.5 text-background" />
