@@ -32,6 +32,7 @@ const modules = [
 ];
 
 const Dashboard = () => {
+  const navigate = useNavigate();
   return (
     <div className="relative min-h-screen bg-background overflow-hidden">
       {/* Subtle dot grid background */}
