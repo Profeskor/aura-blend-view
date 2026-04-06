@@ -550,6 +550,9 @@ Inventory: ${inventoryData.map((d) => `${d.month}: Base ${d.baseStock}M / Scenar
         </motion.div>
       </main>
 
+      {/* AI Chatbot */}
+      <InsightsChatbot dashboardContext={dashboardContext} />
+
       {/* Footer */}
       <footer className="border-t border-border py-5 text-center text-[0.7rem] text-muted-foreground">
         © 2026 Apparel Group | Powered by{" "}
