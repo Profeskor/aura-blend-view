@@ -278,7 +278,7 @@ const InsightsChatbot = ({ dashboardContext }: InsightsChatbotProps) => {
                       placeholder="Ask about your scenario data..."
                       disabled={isLoading}
                       rows={1}
-                      className="w-full resize-none bg-transparent px-4 pt-3.5 pb-12 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none disabled:opacity-50"
+                      className="w-full resize-none bg-transparent px-3.5 pt-3 pb-10 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none disabled:opacity-50"
                     />
                     <div className="absolute bottom-2.5 left-3 right-3 flex items-center justify-between">
                       <span className="text-[0.6rem] text-muted-foreground/50">
