@@ -227,33 +227,53 @@ Inventory: ${inventoryData.map((d) => `${d.month}: Base ${d.baseStock}M / Scenar
               <label className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1.5 block">
                 Scenario *
               </label>
-              <div className="flex items-center justify-between rounded-lg border border-border bg-background px-3 py-2.5 text-sm">
-                <span className="text-foreground">Base_Scenario</span>
-                <ChevronDown className="h-4 w-4 text-muted-foreground" />
-              </div>
+              <Select value={selectedScenario} onValueChange={setSelectedScenario}>
+                <SelectTrigger className="rounded-lg">
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  {scenarios.map((s) => (
+                    <SelectItem key={s} value={s}>{s}</SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
             </div>
             <div>
               <label className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1.5 block">
                 Country
               </label>
-              <div className="flex items-center justify-between rounded-lg border border-border bg-background px-3 py-2.5 text-sm">
-                <span className="text-muted-foreground">-- Select country --</span>
-                <ChevronDown className="h-4 w-4 text-muted-foreground" />
-              </div>
+              <Select value={selectedCountry} onValueChange={setSelectedCountry}>
+                <SelectTrigger className="rounded-lg">
+                  <SelectValue placeholder="-- Select country --" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="all">All Countries</SelectItem>
+                  {countries.map((c) => (
+                    <SelectItem key={c} value={c}>{c}</SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
             </div>
             <div>
               <label className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1.5 block">
                 Brand
               </label>
               <div className="flex items-center gap-2">
-                <div className="flex-1 flex items-center justify-between rounded-lg border border-border bg-background px-3 py-2.5 text-sm">
-                  <span className="text-muted-foreground">-- All Brands --</span>
-                  <ChevronDown className="h-4 w-4 text-muted-foreground" />
-                </div>
-                <button className="px-3 py-2.5 rounded-lg border border-border bg-background text-xs font-semibold text-foreground hover:bg-muted transition-colors">
-                  All Brands
-                </button>
-                <button className="px-3 py-2.5 rounded-lg text-xs font-medium text-muted-foreground hover:text-foreground transition-colors">
+                <Select value={selectedBrand} onValueChange={setSelectedBrand}>
+                  <SelectTrigger className="rounded-lg flex-1">
+                    <SelectValue placeholder="-- All Brands --" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="all">All Brands</SelectItem>
+                    {brands.map((b) => (
+                      <SelectItem key={b} value={b}>{b}</SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+                <button
+                  onClick={() => { setSelectedBrand("all"); setSelectedCountry("all"); setSelectedScenario("Base_Scenario"); }}
+                  className="px-3 py-2.5 rounded-lg text-xs font-medium text-muted-foreground hover:text-foreground transition-colors"
+                >
                   Clear All
                 </button>
               </div>
