@@ -133,14 +133,24 @@ const InsightsChatbot = forwardRef<InsightsChatbotHandle, InsightsChatbotProps>(
       setIsLoading(false);
     }
   };
+  const pendingPromptRef = useRef<string | null>(null);
+
   useImperativeHandle(ref, () => ({
     openWithPrompt: (prompt: string) => {
       setIsOpen(true);
       setMessages([]);
-      // Small delay to let panel render before sending
-      setTimeout(() => sendMessage(prompt), 100);
+      pendingPromptRef.current = prompt;
     },
   }));
+
+  // Process pending prompt after messages state is cleared
+  useEffect(() => {
+    if (pendingPromptRef.current && messages.length === 0 && !isLoading) {
+      const prompt = pendingPromptRef.current;
+      pendingPromptRef.current = null;
+      sendMessage(prompt);
+    }
+  }, [messages, isLoading]);
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "Enter" && !e.shiftKey) {
