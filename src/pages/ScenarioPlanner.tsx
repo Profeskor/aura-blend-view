@@ -116,6 +116,24 @@ const monthlyBreakdown = [
 const ScenarioPlanner = () => {
   const navigate = useNavigate();
 
+  const dashboardContext = `Scenario: Base_Scenario | Country: All | Brand: All Brands
+
+KPI Summary:
+${kpiCards.map((k) => `- ${k.label}: ${k.value} (${k.base}) ${k.delta}`).join("\n")}
+
+Impact Summary (FY):
+${impactSummary.map((r) => `- ${r.metric}: Base ${r.base} → Scenario ${r.scenario} (Delta: ${r.delta}, ${r.deltaPercent})`).join("\n")}
+
+Season Summary:
+${seasonSummary.map((r) => `- ${r.season}: Sales Base ${r.salesBase} → SCN ${r.salesScn} (${r.salesDelta}, ${r.salesDeltaPct}), GP Base ${r.gpBase} → SCN ${r.gpScn}, GP% ${r.gpPctBase} → ${r.gpPctScn}`).join("\n")}
+
+Monthly Breakdown:
+${monthlyBreakdown.map((r) => `- ${r.month}: Sales ${r.salesBase}→${r.salesScn} (${r.salesDelta}), COGS ${r.cogsBase}→${r.cogsScn} (${r.cogsDelta}), GP ${r.gpBase}→${r.gpScn} (${r.gpDelta})`).join("\n")}
+
+GP% Trend: ${gpTrendData.map((d) => `${d.month}: Base ${d.baseGP}% / Scenario ${d.scenarioGP}%`).join(", ")}
+
+Inventory: ${inventoryData.map((d) => `${d.month}: Base ${d.baseStock}M / Scenario ${d.scenarioStock}M`).join(", ")}`;
+
   return (
     <div className="min-h-screen bg-background">
       {/* Top Navigation */}
