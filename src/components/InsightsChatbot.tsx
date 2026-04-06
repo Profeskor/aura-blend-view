@@ -1,9 +1,13 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useImperativeHandle, forwardRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Send, Sparkles, Loader2, ArrowUp, RotateCcw } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 
 type Message = { role: "user" | "assistant"; content: string };
+
+export interface InsightsChatbotHandle {
+  openWithPrompt: (prompt: string) => void;
+}
 
 interface InsightsChatbotProps {
   dashboardContext: string;
@@ -18,7 +22,7 @@ const suggestedQuestions = [
   "Summarize the FY impact vs base",
 ];
 
-const InsightsChatbot = ({ dashboardContext }: InsightsChatbotProps) => {
+const InsightsChatbot = forwardRef<InsightsChatbotHandle, InsightsChatbotProps>(({ dashboardContext }, ref) => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
@@ -129,6 +133,24 @@ const InsightsChatbot = ({ dashboardContext }: InsightsChatbotProps) => {
       setIsLoading(false);
     }
   };
+  const pendingPromptRef = useRef<string | null>(null);
+
+  useImperativeHandle(ref, () => ({
+    openWithPrompt: (prompt: string) => {
+      setIsOpen(true);
+      setMessages([]);
+      pendingPromptRef.current = prompt;
+    },
+  }));
+
+  // Process pending prompt after messages state is cleared
+  useEffect(() => {
+    if (pendingPromptRef.current && messages.length === 0 && !isLoading) {
+      const prompt = pendingPromptRef.current;
+      pendingPromptRef.current = null;
+      sendMessage(prompt);
+    }
+  }, [messages, isLoading]);
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "Enter" && !e.shiftKey) {
@@ -304,6 +326,8 @@ const InsightsChatbot = ({ dashboardContext }: InsightsChatbotProps) => {
       </AnimatePresence>
     </>
   );
-};
+});
+
+InsightsChatbot.displayName = "InsightsChatbot";
 
 export default InsightsChatbot;
