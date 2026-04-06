@@ -121,11 +121,18 @@ const monthlyBreakdown = [
   { month: "Dec", salesBase: "771.8M", salesScn: "771.8M", salesDelta: "--", cogsBase: "325.4M", cogsScn: "325.8M", cogsDelta: "+427,865", gpBase: "446.5M", gpScn: "446.0M", gpDelta: "-427,865" },
 ];
 
+const scenarios = ["Base_Scenario", "Optimistic_Scenario", "Pessimistic_Scenario", "Growth_Scenario"];
+const countries = ["UAE", "KSA", "Kuwait", "Bahrain", "Oman", "Qatar", "India"];
+const brands = ["Aldo", "Call It Spring", "Tim Hortons", "Nine West", "Charles & Keith", "Skechers", "New Balance"];
+
 const ScenarioPlanner = () => {
   const navigate = useNavigate();
   const chatRef = useRef<InsightsChatbotHandle>(null);
+  const [selectedScenario, setSelectedScenario] = useState("Base_Scenario");
+  const [selectedCountry, setSelectedCountry] = useState("all");
+  const [selectedBrand, setSelectedBrand] = useState("all");
 
-  const dashboardContext = `Scenario: Base_Scenario | Country: All | Brand: All Brands
+  const dashboardContext = useMemo(() => `Scenario: ${selectedScenario} | Country: ${selectedCountry === "all" ? "All" : selectedCountry} | Brand: ${selectedBrand === "all" ? "All Brands" : selectedBrand}
 
 KPI Summary:
 ${kpiCards.map((k) => `- ${k.label}: ${k.value} (${k.base}) ${k.delta}`).join("\n")}
@@ -141,7 +148,7 @@ ${monthlyBreakdown.map((r) => `- ${r.month}: Sales ${r.salesBase}→${r.salesScn
 
 GP% Trend: ${gpTrendData.map((d) => `${d.month}: Base ${d.baseGP}% / Scenario ${d.scenarioGP}%`).join(", ")}
 
-Inventory: ${inventoryData.map((d) => `${d.month}: Base ${d.baseStock}M / Scenario ${d.scenarioStock}M`).join(", ")}`;
+Inventory: ${inventoryData.map((d) => `${d.month}: Base ${d.baseStock}M / Scenario ${d.scenarioStock}M`).join(", ")}`, [selectedScenario, selectedCountry, selectedBrand]);
 
   return (
     <div className="min-h-screen bg-background">
