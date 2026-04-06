@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { BarChart3, Users, TrendingUp, Globe, Lock, ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import apparelLogo from "@/assets/apparel_logo.png";
 import simsLogo from "@/assets/sims_logo.png";
 
@@ -31,6 +32,7 @@ const modules = [
 ];
 
 const Dashboard = () => {
+  const navigate = useNavigate();
   return (
     <div className="relative min-h-screen bg-background overflow-hidden">
       {/* Subtle dot grid background */}
@@ -128,6 +130,7 @@ const Dashboard = () => {
                 {/* Launch button for active modules */}
                 {isActive && (
                   <motion.button
+                    onClick={() => navigate("/scenario-planner")}
                     className="mt-6 flex items-center gap-2 rounded-lg bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-all hover:opacity-90"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
