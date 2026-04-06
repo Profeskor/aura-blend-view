@@ -199,7 +199,7 @@ const InsightsChatbot = ({ dashboardContext }: InsightsChatbotProps) => {
 
               {/* Messages area */}
               <div ref={scrollRef} className="flex-1 overflow-y-auto">
-                <div className="mx-auto max-w-2xl px-4 py-8">
+                <div className="px-4 py-6">
                   {/* Empty state */}
                   {messages.length === 0 && (
                     <div className="flex flex-col items-center justify-center py-16">
