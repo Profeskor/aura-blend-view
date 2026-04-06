@@ -28,6 +28,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import apparelLogo from "@/assets/apparel_logo.png";
 import simsLogo from "@/assets/sims_logo.png";
+import InsightsChatbot from "@/components/InsightsChatbot";
 
 // --- Static Data ---
 
