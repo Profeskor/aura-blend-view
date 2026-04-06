@@ -133,8 +133,16 @@ const InsightsChatbot = forwardRef<InsightsChatbotHandle, InsightsChatbotProps>(
       setIsLoading(false);
     }
   };
+  useImperativeHandle(ref, () => ({
+    openWithPrompt: (prompt: string) => {
+      setIsOpen(true);
+      setMessages([]);
+      // Small delay to let panel render before sending
+      setTimeout(() => sendMessage(prompt), 100);
+    },
+  }));
 
-  const handleKeyDown = (e: React.KeyboardEvent) => {
+
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
       sendMessage(input);
