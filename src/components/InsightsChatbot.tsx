@@ -228,19 +228,19 @@ const InsightsChatbot = ({ dashboardContext }: InsightsChatbotProps) => {
 
                   {/* Messages */}
                   {messages.map((msg, i) => (
-                    <div key={i} className={`mb-6 ${msg.role === "user" ? "flex justify-end" : ""}`}>
+                    <div key={i} className={`mb-5 ${msg.role === "user" ? "flex justify-end" : ""}`}>
                       {msg.role === "user" ? (
-                        <div className="max-w-[80%] rounded-2xl bg-foreground text-background px-5 py-3 text-[0.9rem] leading-relaxed">
+                        <div className="max-w-[85%] rounded-2xl bg-foreground text-background px-4 py-2.5 text-sm leading-relaxed">
                           {msg.content}
                         </div>
                       ) : (
-                        <div className="flex gap-3">
+                        <div className="flex gap-2.5">
                           <div className="flex-shrink-0 mt-1">
-                            <div className="flex h-7 w-7 items-center justify-center rounded-full bg-foreground">
-                              <Sparkles className="h-3 w-3 text-background" />
+                            <div className="flex h-6 w-6 items-center justify-center rounded-full bg-foreground">
+                              <Sparkles className="h-2.5 w-2.5 text-background" />
                             </div>
                           </div>
-                          <div className="min-w-0 flex-1 text-[0.9rem] leading-relaxed text-foreground prose prose-neutral max-w-none prose-p:my-2 prose-ul:my-2 prose-ol:my-2 prose-li:my-0.5 prose-headings:text-foreground prose-strong:text-foreground prose-code:text-foreground prose-code:bg-muted prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-code:text-xs prose-pre:bg-muted prose-pre:rounded-xl">
+                          <div className="min-w-0 flex-1 text-sm leading-relaxed text-foreground prose prose-sm prose-neutral max-w-none prose-p:my-1.5 prose-ul:my-1.5 prose-ol:my-1.5 prose-li:my-0.5 prose-headings:text-foreground prose-strong:text-foreground prose-code:text-foreground prose-code:bg-muted prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-code:text-xs prose-pre:bg-muted prose-pre:rounded-lg">
                             <ReactMarkdown>{msg.content}</ReactMarkdown>
                           </div>
                         </div>
