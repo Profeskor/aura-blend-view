@@ -552,7 +552,7 @@ Inventory: ${inventoryData.map((d) => `${d.month}: Base ${d.baseStock}M / Scenar
       </main>
 
       {/* AI Chatbot */}
-      <InsightsChatbot dashboardContext={dashboardContext} />
+      <InsightsChatbot ref={chatRef} dashboardContext={dashboardContext} />
 
       {/* Footer */}
       <footer className="border-t border-border py-5 text-center text-[0.7rem] text-muted-foreground">
