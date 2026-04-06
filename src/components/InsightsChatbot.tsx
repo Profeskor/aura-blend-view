@@ -308,6 +308,8 @@ const InsightsChatbot = forwardRef<InsightsChatbotHandle, InsightsChatbotProps>(
       </AnimatePresence>
     </>
   );
-};
+});
+
+InsightsChatbot.displayName = "InsightsChatbot";
 
 export default InsightsChatbot;
