@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { BarChart3, Users, TrendingUp, Globe, Lock, ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import apparelLogo from "@/assets/apparel_logo.png";
 import simsLogo from "@/assets/sims_logo.png";
 
