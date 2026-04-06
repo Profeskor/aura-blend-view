@@ -116,6 +116,7 @@ const monthlyBreakdown = [
 
 const ScenarioPlanner = () => {
   const navigate = useNavigate();
+  const chatRef = useRef<InsightsChatbotHandle>(null);
 
   const dashboardContext = `Scenario: Base_Scenario | Country: All | Brand: All Brands
 
