@@ -293,8 +293,8 @@ const InsightsChatbot = ({ dashboardContext }: InsightsChatbotProps) => {
                       </button>
                     </div>
                   </div>
-                  <p className="text-center text-[0.6rem] text-muted-foreground/40 mt-2">
-                    AI can make mistakes. Verify important data against the dashboard.
+                  <p className="text-center text-[0.55rem] text-muted-foreground/40 mt-1.5">
+                    AI may make mistakes. Verify against the dashboard.
                   </p>
                 </div>
               </div>
