@@ -154,26 +154,18 @@ const InsightsChatbot = ({ dashboardContext }: InsightsChatbotProps) => {
         )}
       </AnimatePresence>
 
-      {/* Full overlay chat panel — Claude style */}
+      {/* Chat panel — Claude style, fixed size */}
       <AnimatePresence>
         {isOpen && (
           <>
-            {/* Backdrop */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="fixed inset-0 z-50 bg-background/80 backdrop-blur-sm"
-              onClick={() => setIsOpen(false)}
-            />
-
             {/* Chat container */}
             <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 40 }}
-              transition={{ type: "spring", damping: 28, stiffness: 350 }}
-              className="fixed inset-0 z-50 flex flex-col"
+              initial={{ opacity: 0, x: 400 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 400 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="fixed bottom-6 right-6 z-50 flex w-[420px] flex-col rounded-2xl border border-border bg-card shadow-2xl"
+              style={{ height: "min(640px, calc(100vh - 48px))" }}
             >
               {/* Top bar */}
               <div className="flex items-center justify-between px-6 py-3 border-b border-border/50 bg-background/90 backdrop-blur-md">
