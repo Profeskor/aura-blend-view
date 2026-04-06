@@ -154,29 +154,21 @@ const InsightsChatbot = ({ dashboardContext }: InsightsChatbotProps) => {
         )}
       </AnimatePresence>
 
-      {/* Full overlay chat panel — Claude style */}
+      {/* Chat panel — Claude style, fixed size */}
       <AnimatePresence>
         {isOpen && (
           <>
-            {/* Backdrop */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="fixed inset-0 z-50 bg-background/80 backdrop-blur-sm"
-              onClick={() => setIsOpen(false)}
-            />
-
             {/* Chat container */}
             <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 40 }}
-              transition={{ type: "spring", damping: 28, stiffness: 350 }}
-              className="fixed inset-0 z-50 flex flex-col"
+              initial={{ opacity: 0, x: 400 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 400 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="fixed bottom-6 right-6 z-50 flex w-[420px] flex-col rounded-2xl border border-border bg-card shadow-2xl"
+              style={{ height: "min(640px, calc(100vh - 48px))" }}
             >
               {/* Top bar */}
-              <div className="flex items-center justify-between px-6 py-3 border-b border-border/50 bg-background/90 backdrop-blur-md">
+              <div className="flex items-center justify-between px-4 py-3 border-b border-border/50">
                 <div className="flex items-center gap-3">
                   <div className="flex h-8 w-8 items-center justify-center rounded-full bg-foreground">
                     <Sparkles className="h-3.5 w-3.5 text-background" />
@@ -207,25 +199,25 @@ const InsightsChatbot = ({ dashboardContext }: InsightsChatbotProps) => {
 
               {/* Messages area */}
               <div ref={scrollRef} className="flex-1 overflow-y-auto">
-                <div className="mx-auto max-w-2xl px-4 py-8">
+                <div className="px-4 py-6">
                   {/* Empty state */}
                   {messages.length === 0 && (
-                    <div className="flex flex-col items-center justify-center py-16">
-                      <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-foreground mb-6">
-                        <Sparkles className="h-7 w-7 text-background" />
+                    <div className="flex flex-col items-center justify-center py-10">
+                      <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-foreground mb-4">
+                        <Sparkles className="h-5 w-5 text-background" />
                       </div>
-                      <h2 className="text-xl font-semibold text-foreground mb-2">
+                      <h2 className="text-base font-semibold text-foreground mb-1">
                         What would you like to know?
                       </h2>
-                      <p className="text-sm text-muted-foreground mb-8 text-center max-w-md">
-                        Ask me about your scenario data — sales trends, GP margins, inventory risks, or any metric on your dashboard.
+                      <p className="text-xs text-muted-foreground mb-5 text-center">
+                        Ask about your scenario data — sales, GP, inventory, and more.
                       </p>
-                      <div className="grid grid-cols-2 gap-3 w-full max-w-lg">
+                      <div className="grid grid-cols-1 gap-2 w-full">
                         {suggestedQuestions.map((q) => (
                           <button
                             key={q}
                             onClick={() => sendMessage(q)}
-                            className="text-left rounded-xl border border-border bg-card px-4 py-3.5 text-sm text-foreground hover:bg-muted/70 transition-colors leading-snug"
+                            className="text-left rounded-xl border border-border bg-background px-3.5 py-2.5 text-xs text-foreground hover:bg-muted/70 transition-colors leading-snug"
                           >
                             {q}
                           </button>
@@ -236,19 +228,19 @@ const InsightsChatbot = ({ dashboardContext }: InsightsChatbotProps) => {
 
                   {/* Messages */}
                   {messages.map((msg, i) => (
-                    <div key={i} className={`mb-6 ${msg.role === "user" ? "flex justify-end" : ""}`}>
+                    <div key={i} className={`mb-5 ${msg.role === "user" ? "flex justify-end" : ""}`}>
                       {msg.role === "user" ? (
-                        <div className="max-w-[80%] rounded-2xl bg-foreground text-background px-5 py-3 text-[0.9rem] leading-relaxed">
+                        <div className="max-w-[85%] rounded-2xl bg-foreground text-background px-4 py-2.5 text-sm leading-relaxed">
                           {msg.content}
                         </div>
                       ) : (
-                        <div className="flex gap-3">
+                        <div className="flex gap-2.5">
                           <div className="flex-shrink-0 mt-1">
-                            <div className="flex h-7 w-7 items-center justify-center rounded-full bg-foreground">
-                              <Sparkles className="h-3 w-3 text-background" />
+                            <div className="flex h-6 w-6 items-center justify-center rounded-full bg-foreground">
+                              <Sparkles className="h-2.5 w-2.5 text-background" />
                             </div>
                           </div>
-                          <div className="min-w-0 flex-1 text-[0.9rem] leading-relaxed text-foreground prose prose-neutral max-w-none prose-p:my-2 prose-ul:my-2 prose-ol:my-2 prose-li:my-0.5 prose-headings:text-foreground prose-strong:text-foreground prose-code:text-foreground prose-code:bg-muted prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-code:text-xs prose-pre:bg-muted prose-pre:rounded-xl">
+                          <div className="min-w-0 flex-1 text-sm leading-relaxed text-foreground prose prose-sm prose-neutral max-w-none prose-p:my-1.5 prose-ul:my-1.5 prose-ol:my-1.5 prose-li:my-0.5 prose-headings:text-foreground prose-strong:text-foreground prose-code:text-foreground prose-code:bg-muted prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-code:text-xs prose-pre:bg-muted prose-pre:rounded-lg">
                             <ReactMarkdown>{msg.content}</ReactMarkdown>
                           </div>
                         </div>
@@ -275,9 +267,9 @@ const InsightsChatbot = ({ dashboardContext }: InsightsChatbotProps) => {
               </div>
 
               {/* Input area — Claude style bottom bar */}
-              <div className="border-t border-border/50 bg-background/90 backdrop-blur-md">
-                <div className="mx-auto max-w-2xl px-4 py-4">
-                  <div className="relative rounded-2xl border border-border bg-card shadow-sm focus-within:border-foreground/20 focus-within:shadow-md transition-all">
+              <div className="border-t border-border/50">
+                <div className="px-4 py-3">
+                  <div className="relative rounded-xl border border-border bg-background shadow-sm focus-within:border-foreground/20 transition-all">
                     <textarea
                       ref={textareaRef}
                       value={input}
@@ -286,7 +278,7 @@ const InsightsChatbot = ({ dashboardContext }: InsightsChatbotProps) => {
                       placeholder="Ask about your scenario data..."
                       disabled={isLoading}
                       rows={1}
-                      className="w-full resize-none bg-transparent px-4 pt-3.5 pb-12 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none disabled:opacity-50"
+                      className="w-full resize-none bg-transparent px-3.5 pt-3 pb-10 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none disabled:opacity-50"
                     />
                     <div className="absolute bottom-2.5 left-3 right-3 flex items-center justify-between">
                       <span className="text-[0.6rem] text-muted-foreground/50">
@@ -301,8 +293,8 @@ const InsightsChatbot = ({ dashboardContext }: InsightsChatbotProps) => {
                       </button>
                     </div>
                   </div>
-                  <p className="text-center text-[0.6rem] text-muted-foreground/40 mt-2">
-                    AI can make mistakes. Verify important data against the dashboard.
+                  <p className="text-center text-[0.55rem] text-muted-foreground/40 mt-1.5">
+                    AI may make mistakes. Verify against the dashboard.
                   </p>
                 </div>
               </div>
