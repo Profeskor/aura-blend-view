@@ -130,6 +130,7 @@ const Dashboard = () => {
                 {/* Launch button for active modules */}
                 {isActive && (
                   <motion.button
+                    onClick={() => navigate("/scenario-planner")}
                     className="mt-6 flex items-center gap-2 rounded-lg bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-all hover:opacity-90"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
