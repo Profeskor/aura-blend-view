@@ -22,7 +22,7 @@ const suggestedQuestions = [
   "Summarize the FY impact vs base",
 ];
 
-const InsightsChatbot = ({ dashboardContext }: InsightsChatbotProps) => {
+const InsightsChatbot = forwardRef<InsightsChatbotHandle, InsightsChatbotProps>(({ dashboardContext }, ref) => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
