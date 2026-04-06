@@ -142,7 +142,7 @@ const InsightsChatbot = forwardRef<InsightsChatbotHandle, InsightsChatbotProps>(
     },
   }));
 
-
+  const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
       sendMessage(input);
