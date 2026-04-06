@@ -202,15 +202,15 @@ const InsightsChatbot = ({ dashboardContext }: InsightsChatbotProps) => {
                 <div className="px-4 py-6">
                   {/* Empty state */}
                   {messages.length === 0 && (
-                    <div className="flex flex-col items-center justify-center py-16">
-                      <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-foreground mb-6">
-                        <Sparkles className="h-7 w-7 text-background" />
+                    <div className="flex flex-col items-center justify-center py-10">
+                      <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-foreground mb-4">
+                        <Sparkles className="h-5 w-5 text-background" />
                       </div>
-                      <h2 className="text-xl font-semibold text-foreground mb-2">
+                      <h2 className="text-base font-semibold text-foreground mb-1">
                         What would you like to know?
                       </h2>
-                      <p className="text-sm text-muted-foreground mb-8 text-center max-w-md">
-                        Ask me about your scenario data — sales trends, GP margins, inventory risks, or any metric on your dashboard.
+                      <p className="text-xs text-muted-foreground mb-5 text-center">
+                        Ask about your scenario data — sales, GP, inventory, and more.
                       </p>
                       <div className="grid grid-cols-2 gap-3 w-full max-w-lg">
                         {suggestedQuestions.map((q) => (
