@@ -75,6 +75,9 @@ const Index = () => {
           >
             <h2 className="font-heading text-4xl font-bold text-white drop-shadow-lg">
               OmniLens
+              <span className="ml-3 align-middle rounded-md bg-white/15 px-2.5 py-1 text-[0.6rem] font-semibold uppercase tracking-widest text-white/80">
+                Beta
+              </span>
             </h2>
             <p className="mt-2 text-sm text-white/60 font-medium">
               One lens. Every insight.
