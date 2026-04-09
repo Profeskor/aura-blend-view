@@ -60,6 +60,9 @@ const Dashboard = () => {
           <span className="text-lg font-heading font-semibold text-foreground tracking-tight">
             OmniLens
           </span>
+          <span className="rounded-md bg-primary/10 px-2 py-0.5 text-[0.6rem] font-semibold uppercase tracking-widest text-primary">
+            Beta
+          </span>
         </div>
         <div className="flex items-center gap-3">
           <span className="text-sm text-muted-foreground">Welcome back</span>

@@ -164,6 +164,9 @@ Inventory: ${inventoryData.map((d) => `${d.month}: Base ${d.baseStock}M / Scenar
           <span className="text-base font-heading font-bold text-foreground tracking-tight">
             OmniLens
           </span>
+          <span className="rounded-md bg-primary/10 px-2 py-0.5 text-[0.6rem] font-semibold uppercase tracking-widest text-primary">
+            Beta
+          </span>
           <nav className="flex items-center gap-1 ml-4">
             {[
               { label: "Data Upload", icon: Upload },
